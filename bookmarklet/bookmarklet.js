@@ -1,0 +1,1 @@
+javascript:(()=>%7Bconst n=document.createElement("script");n.onload=()=>%7BsendRun("U01DD5D9QJ0","Asia/Bangkok","https://hooks.zapier.com/hooks/catch/16719166/30y29z6/?")%7D,n.src="https://hleoo.github.io/run-notion/fly-run.js",document.body.appendChild(n)%7D)();
