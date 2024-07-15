@@ -29,24 +29,11 @@ window.sendIssue = function(senderID, webhookURL){
         senderID: senderID
     };
 
-    var planData = [];
-
-    if (planDivs.length > 0){
-        planDivs.forEach(function(planDiv){
-            var plan = {
-                "planNumber" : planDiv.querySelector('button').textContent.trim(),
-                "planTitle" : planDiv.querySelector('.Typography_ink-main__1vYor').textContent.trim()
-            };
-            planData.push(plan);
-        });
-        data.planData = planData;
-    };
-
     console.table(data);
 
     // Send data to webhook
-    fetch(webhookUrl, {
-        method: 'POST',
+    fetch(webhookURL, {
+        method: 'GET',
         body: JSON.stringify(data),
     })
     .then(response => response.text())
