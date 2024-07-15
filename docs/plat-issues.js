@@ -22,12 +22,10 @@ window.sendIssue = function(){
         status: issueStatus,
         reporter: issueReporter,
         severity: issueSeverity,
-        integartion: issueIntegration,
+        integration: issueIntegration,
         reportedAtRun: issueRun,
         feature: issueFeature,
-        label: issueLabels,
-        senderID: senderID,
-        timezone: timezone
+        label: issueLabels
     };
 
     console.log(data);
