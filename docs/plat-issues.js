@@ -33,7 +33,7 @@ window.sendIssue = function(senderID, webhookURL){
 
     // Send data to webhook
     fetch(webhookURL, {
-        method: 'GET',
+        method: 'POST',
         body: JSON.stringify(data),
     })
     .then(response => response.text())
