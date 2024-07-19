@@ -22,7 +22,7 @@ function extractTextBetweenKeywords(text, keywords) {
         
         if (match && match[1]) {
             const key = startKeyword.replace(':', '').trim();
-            const value = formatText(match[1].trim());
+            const value = formatText(key, match[1].trim());
             results[key] = value;
         }
     }
@@ -34,7 +34,7 @@ function extractTextBetweenKeywords(text, keywords) {
 
     if (lastMatch && lastMatch[1]) {
         const key = lastKeyword.replace(':', '').trim();
-        const value = formatText(lastMatch[1].trim());
+        const value = formatText(key, lastMatch[1].trim());
         results[key] = value;
     }
 
