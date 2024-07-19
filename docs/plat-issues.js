@@ -1,3 +1,16 @@
+function formatText(key, text) {
+    if (key === 'Environment' || key === 'Test Case information') {
+        return text.split('\n').map(line => `> ${line}`).join('\n');
+    }
+    if (key === 'Steps to reproduce') {
+        return text.split('\n').map((line, index) => `${index + 1}. ${line}`).join('\n');
+    }
+    if (key === 'Expected result' || key === 'Actual result') {
+        return text.split('\n').map(line => `- ${line}`).join('\n');
+    }
+    return text;
+}
+
 function extractTextBetweenKeywords(text, keywords) {
     const results = {};
     
@@ -9,7 +22,7 @@ function extractTextBetweenKeywords(text, keywords) {
         
         if (match && match[1]) {
             const key = startKeyword.replace(':', '').trim();
-            const value = match[1].trim();
+            const value = formatText(match[1].trim());
             results[key] = value;
         }
     }
@@ -21,7 +34,7 @@ function extractTextBetweenKeywords(text, keywords) {
 
     if (lastMatch && lastMatch[1]) {
         const key = lastKeyword.replace(':', '').trim();
-        const value = lastMatch[1].trim();
+        const value = formatText(lastMatch[1].trim());
         results[key] = value;
     }
 
