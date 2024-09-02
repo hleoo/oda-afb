@@ -14,6 +14,9 @@ window.sendRun = function(senderID, webhookURL){
         runID: runID,
         runTitle: runTitle,
         runURL: currentUrl,
+        runTL: runTL,
+        runDateStart: runDateStart,
+        runDateEnd: runDateEnd,
         senderID: senderID
     }
 
