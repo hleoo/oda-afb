@@ -1,5 +1,7 @@
 window.sendRun = function(senderID, webhookURL){
 
+    console.log('SendRun');
+
     var currentUrl = window.location.href;
     var runID = currentURL.match(/\/runs\/(\d+)/)?.[1] || null;;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
