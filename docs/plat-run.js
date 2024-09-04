@@ -2,7 +2,7 @@ window.sendRun = function(senderID, webhookURL){
 
     console.log('SendRun');
 
-    var currentUrl = window.location.href;
+    var currentURL = window.location.href;
     var runID = currentURL.match(/\/runs\/(\d+)/)?.[1] || null;;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
     var runTL = document.querySelector('[data-test-id="runPageAssignTestLeadModalToggle"]').textContent;
@@ -13,7 +13,7 @@ window.sendRun = function(senderID, webhookURL){
     var data = {
         runID: runID,
         runTitle: runTitle,
-        runURL: currentUrl,
+        runURL: currentURL,
         runTL: runTL,
         runDateStart: runDateStart,
         runDateEnd: runDateEnd,
