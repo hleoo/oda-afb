@@ -3,6 +3,7 @@ window.sendRun = function(senderID, webhookURL){
     console.log('SendRun');
 
     var currentURL = window.location.href;
+    var workspace = window.location.pathname.split('/')[3];
     var runID = currentURL.match(/\/runs\/(\d+)/)?.[1] || null;;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
     var runTL = document.querySelector('[data-test-id="runPageAssignTestLeadModalToggle"]').textContent;
@@ -10,6 +11,7 @@ window.sendRun = function(senderID, webhookURL){
     var runDateEnd = document.querySelector('[data-test-id="rangePickerComponentEndDate"]').textContent;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
     var runStatus = document.querySelector('[data-test-id="runStatusBadge"]').textContent;
+
 
     var data = {
         runID: runID,
@@ -19,6 +21,7 @@ window.sendRun = function(senderID, webhookURL){
         runDateStart: runDateStart,
         runDateEnd: runDateEnd,
         runStatus: runStatus,
+        workspace: workspace,
         senderID: senderID
     }
 
