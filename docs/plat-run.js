@@ -9,6 +9,7 @@ window.sendRun = function(senderID, webhookURL){
     var runDateStart = document.querySelector('[data-test-id="rangePickerComponentStartDate"]').textContent;
     var runDateEnd = document.querySelector('[data-test-id="rangePickerComponentEndDate"]').textContent;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
+    var runStatus = document.querySelector('[data-test-id="runStatusBadge"]').textContent;
 
     var data = {
         runID: runID,
@@ -17,6 +18,7 @@ window.sendRun = function(senderID, webhookURL){
         runTL: runTL,
         runDateStart: runDateStart,
         runDateEnd: runDateEnd,
+        runStatus: runStatus,
         senderID: senderID
     }
 
