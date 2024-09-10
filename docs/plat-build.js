@@ -5,6 +5,9 @@ window.sendBuild = function(senderID, webhookURL){
     var buildVersion;
     var buildURL;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
+    var runID = window.location.pathname.split('/').pop();
+    console.log(lastPath);
+    
     var buildTag = document.querySelector('div[class^="Tags_triggerWrapper"] ul li').textContent;
 
     // Select all <a> elements with the text "Download"
@@ -50,6 +53,7 @@ window.sendBuild = function(senderID, webhookURL){
         buildTag: buildTag,
         runTitle: runTitle,
         runURL: currentUrl,
+        runID: runID,
         senderID: senderID
     }
 
