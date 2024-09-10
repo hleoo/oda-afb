@@ -5,7 +5,7 @@ window.sendBuild = function(senderID, webhookURL){
     var buildVersion;
     var buildURL;
     var runTitle = document.querySelector('textarea[data-test-id="runPageTitleInput"]').value;
-    console.log(lastPath);
+    var runID = window.location.pathname.split('/').pop();
     
     var buildTag = document.querySelector('div[class^="Tags_triggerWrapper"] ul li').textContent;
 
@@ -52,6 +52,7 @@ window.sendBuild = function(senderID, webhookURL){
         buildTag: buildTag,
         runTitle: runTitle,
         runURL: currentUrl,
+        runID: runID,
         senderID: senderID
     }
 
